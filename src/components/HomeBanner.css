@@ -1,0 +1,36 @@
+
+.HomeBanner {
+  width: 100%;
+  height: 20%;
+  position: relative;
+}
+
+.Banner{
+  background-position: center;
+  background-size: cover;
+  object-fit: cover;
+
+}
+
+.Banner img {
+  display: block;
+  width: 100%;
+  height: auto%;
+}
+
+.BannerTitle {
+  position: absolute;
+  left: 0;
+  bottom: 0px;
+  color: white;
+  padding: 10px;
+  background-color: rgba(0, 0, 0, 0.5);
+  width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  line-clamp: 2;
+  -webkit-line-clamp: 2;
+  box-orient: vertical;
+  -webkit-box-orient: vertical;
+}
