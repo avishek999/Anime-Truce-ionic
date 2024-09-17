@@ -7,7 +7,7 @@
 
 ## Features
 
-- **Anime Search**: Search for anime series and movies with details about the show.
+- **Anime Search**: Search for anime series and movies with details provided by the **Consumet API**.
 - **Trending Anime**: Stay updated with the most popular and trending anime.
 - **Watchlist**: Create and manage a personal watchlist.
 - **Anime Details**: View detailed information like synopsis, episodes, genre, and ratings.
@@ -16,11 +16,10 @@
 
 ## Tech Stack
 
-- **Frontend**: Ionic Framework (with Angular and SCSS)
-- **Backend**: Node.js (Express for APIs)
-- **Styling**: SCSS for component-level styling
-- **Database**: MongoDB for storing user data and watchlist information
-- **API**: Utilizes third-party anime APIs for fetching anime details
+- **Frontend**: Ionic Framework (with Angular and SCSS for styling)
+- **Backend**: Firebase for user authentication, database, and cloud functions
+- **API**: Utilizes the **Consumet API** for fetching anime details
+- **Database**: Firebase Firestore for storing user data and watchlist information
 
 ## Installation
 
@@ -37,12 +36,17 @@ To run this project locally:
    npm install
    ```
 
-3. Run the app:
+3. Set up Firebase:
+   - Go to the [Firebase Console](https://console.firebase.google.com/) and create a new project.
+   - Set up Firestore and Firebase Authentication.
+   - Add your Firebase config in the app's environment file.
+
+4. Run the app:
    ```bash
    ionic serve
    ```
 
-4. For Android/iOS builds:
+5. For Android/iOS builds:
    - Install required Cordova/Capacitor plugins.
    - Run the app on the emulator or device:
      ```bash
