@@ -12,6 +12,7 @@ import { Autoplay, Pagination, Navigation } from 'swiper/modules';
 interface Slide {
   image: string;
   title: string;
+  url: string;
 }
 
 interface HomeBannerProps {
@@ -39,15 +40,17 @@ const HomeBanner: React.FC<HomeBannerProps> = ({ slides }) => {
         pagination={{
           clickable: true,
         }}
-        navigation={true}
+        navigation={false}
         modules={[Autoplay, Pagination, Navigation]}
         onAutoplayTimeLeft={onAutoplayTimeLeft}
         className="mySwiper HomeBanner"
       >
         {slides.map((slide, index) => (
           <SwiperSlide key={index} className="Banner">
+            <a href={slide.url}>
             <img className='BannerImg' src={slide.image} alt={`Anime ${index}`} />
             <h4 className='BannerTitle' >{slide.title}</h4>
+            </a>
           </SwiperSlide>
         ))}
 

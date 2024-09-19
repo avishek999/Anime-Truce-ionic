@@ -3,6 +3,8 @@ import React, { useState } from 'react';
 import HomeBanner from '../components/HomeBanner';
 import { person, search } from 'ionicons/icons';
 import RecentEpisode from '../components/RecentEpisode';
+import Example from '../components/BottomBar';
+import BottomBar from '../components/BottomBar';
 
 const List: React.FC = () => {
   const [loading, setLoading] = useState<boolean>(true);
@@ -72,16 +74,18 @@ const List: React.FC = () => {
           <IonTitle>Anime Truce</IonTitle>
         </IonToolbar>
       </IonHeader>
-      <IonContent className="ion-padding">
+      <IonContent className="">
         {!loading && (
           <HomeBanner 
             slides={Topair.map(anime => ({
               image: anime.image,
-              title: anime.title
+              title: anime.title,
+              url: anime.url,
             }))}
           />
         )}
-       {!loading && <RecentEpisode slides={RecentData.map(anime => ({image: anime.image, title: anime.title}))}  />} 
+       {!loading && <RecentEpisode slides={RecentData.map(anime => ({image: anime.image, title: anime.title}))}  />}
+     
       </IonContent>
     </IonPage>
   );
