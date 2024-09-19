@@ -19,7 +19,7 @@
 - **Frontend**: Ionic Framework (with Angular and SCSS for styling)
 - **Backend**: Firebase for user authentication, database, and cloud functions
 - **API**: Utilizes the **Consumet API** for fetching anime details
-- **Database**: Firebase Firestore for storing user data and watchlist information
+- **Database**: Firebase Firestore for storing user data and watchlist informations
 
 ## Installation
 
