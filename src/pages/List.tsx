@@ -81,10 +81,11 @@ const List: React.FC = () => {
               image: anime.image,
               title: anime.title,
               url: anime.url,
+              id: anime.id,
             }))}
           />
         )}
-       {!loading && <RecentEpisode slides={RecentData.map(anime => ({image: anime.image, title: anime.title}))}  />}
+       {!loading && <RecentEpisode slides={RecentData.map(anime => ({image: anime.image, title: anime.title,id: anime.id}))}  />}
      
       </IonContent>
     </IonPage>

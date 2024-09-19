@@ -36,6 +36,7 @@ import Register from './pages/Register';
 import Menu from './pages/menu/Menu';
 import './components/styles.css'
 import { cog, person } from 'ionicons/icons';
+import AniDetails from './pages/AniDetails';
 
 setupIonicReact();
 
@@ -49,7 +50,7 @@ const App: React.FC = () => (
         </Route>
        <Route component={Register} path="/register" exact />
        <Route component={Menu} path="/app"  />
-
+     <Route component={AniDetails} path="app/:id" />
       </IonRouterOutlet>
     </IonReactRouter>
   </IonApp>

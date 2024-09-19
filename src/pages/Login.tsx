@@ -51,7 +51,7 @@ const Login: React.FC = () => {
     await present('Logging in...');
     setTimeout(() => {
       dismiss();
-      router.push('/app/bar', 'root');
+      router.push('app/bar', 'root');
     }, 2000);
     
   };
