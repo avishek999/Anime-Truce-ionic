@@ -9,6 +9,7 @@ import 'swiper/css/pagination';
 import './HomeBanner.css';
 
 import { Autoplay, Pagination, Navigation } from 'swiper/modules';
+import { IonRouterLink, useIonRouter } from '@ionic/react';
 
 interface Slide {
   image: string;
@@ -23,7 +24,7 @@ interface HomeBannerProps {
 
 const HomeBanner: React.FC<HomeBannerProps> = ({ slides }) => {
 
-
+const router = useIonRouter()
   const history = useHistory();
   // Define the types for the refs
   const progressCircle = useRef<SVGElement | null>(null);
@@ -44,7 +45,7 @@ const HomeBanner: React.FC<HomeBannerProps> = ({ slides }) => {
 
   const handleSlideClick = (id: number) => {
     // Navigate to the detail page with the selected slide's ID
-    history.push(`/app/${id}`);
+    router.push(`/anime/${id}`);
   };
   return (
     <>

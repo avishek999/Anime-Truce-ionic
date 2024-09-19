@@ -50,7 +50,7 @@ const App: React.FC = () => (
         </Route>
        <Route component={Register} path="/register" exact />
        <Route component={Menu} path="/app"  />
-     <Route component={AniDetails} path="app/:id" />
+     <Route component={AniDetails} path="/anime/:id" />
       </IonRouterOutlet>
     </IonReactRouter>
   </IonApp>
