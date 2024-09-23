@@ -24,7 +24,7 @@ import {
 } from "ionicons/icons";
 import React, { useState } from "react";
 
-const Register: React.FC = () => {
+const RegisterScreen: React.FC = () => {
   const [email, setEmail] = useState<string>(""); // State to track email input
   const [password, setPassword] = useState<string>("");
   const [name, setName] = useState<string>("");
@@ -111,4 +111,4 @@ const Register: React.FC = () => {
   );
 };
 
-export default Register;
+export default RegisterScreen;

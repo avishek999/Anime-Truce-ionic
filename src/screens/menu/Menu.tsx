@@ -19,12 +19,11 @@ import {
 import { cog, home, homeOutline, list, logOutOutline, person, settings } from "ionicons/icons";
 import React from "react";
 import { Redirect, Route } from "react-router";
-import List from "../List";
-import Setting from "../Setting";
+import List from "../HomeScreen";
+import Setting from "../SettingScreen";
 import { Icon } from "ionicons/dist/types/components/icon/icon";
-import HomeScreen from "../../screens/HomeScreen";
-import SettingScreen from "../../screens/SettingScreen";
-import AppRoute from "../../AppRoutes";
+import HomeScreen from "../HomeScreen";
+import SettingScreen from "../SettingScreen";
 
 const Menu: React.FC = () => {
   const paths = [
@@ -57,7 +56,7 @@ const Menu: React.FC = () => {
         </IonContent>
       </IonMenu>
       <IonRouterOutlet id="menu">
-        <Route exact path="/app/bar" component={AppRoute} />
+        <Route exact path="/app/bar" component={HomeScreen} />
         <Route path="/app/settings" component={SettingScreen} />
         <Route exact path="/app">
           <Redirect to="/app/bar" />

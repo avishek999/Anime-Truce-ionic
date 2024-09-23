@@ -20,14 +20,13 @@ import { logInOutline, personCircleOutline } from "ionicons/icons";
 import React, { useEffect, useState } from "react";
 import Intro from "../components/Intro";
 import {Preferences} from "@capacitor/preferences";
-import "./Login.css";
 import { Router } from "react-router";
 
 
 
 const INTRO_KEY = "intro-seen";
 
-const Login: React.FC = () => {
+const LoginScreen: React.FC = () => {
   const [email, setEmail] = useState<string>(""); // State to track email input
   const [password, setPassword] = useState<string>(""); // State to track email input
   const [intro, setIntro] = useState(false)
@@ -142,4 +141,4 @@ const Login: React.FC = () => {
   );
 };
 
-export default Login;
+export default LoginScreen;

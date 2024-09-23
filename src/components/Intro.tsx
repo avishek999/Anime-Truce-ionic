@@ -24,15 +24,15 @@ const Intro: React.FC<ContainProps> = ({ onFinish }) => {
       >
         <SwiperSlide className= "introBanner">
           {" "}
-          <img src="/slider1.png" alt="" />
+          <img src="images/sliders/slider1.png" alt="" />
           <h1>Enjoy your best anime</h1>
         </SwiperSlide>
         <SwiperSlide className= "introBanner">
-          <img src="/slider2.png" alt="" />
+          <img src="images/sliders/slider2.png" alt="" />
           <h1>Free With this App</h1>
         </SwiperSlide >
         <SwiperSlide className= "introBanner">
-          <img src="/slider3.png" alt="" />
+          <img src="images/sliders/slider3.png" alt="" />
           <h1>Start you journey</h1>
           <IonButton color={"dark"} shape={"round"} onClick={()=>onFinish()}>
             Start
