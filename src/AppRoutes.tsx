@@ -12,6 +12,7 @@ import TodayScreen from './screens/TodayScreen';
 import HomeScreen from './screens/HomeScreen';
 import ChatBotScreen from './screens/ChatBotScreen';
 import SearchScreen from './screens/SearchScreen';
+import AnimeEpisode from './screens/AnimeEpisode';
 
 
 function AppRoute() {
@@ -20,11 +21,12 @@ function AppRoute() {
       <IonTabs>
         <IonRouterOutlet>
           <Route exact path="/app/bar">
-            <Redirect to="/home" />
+          
           </Route>
-          <Route path="/anime/:id" component={AnimeDetailScreen} exact />
+          <Route path="/animes/:id"  component={AnimeEpisode}/>
+          <Route path="/anime/:id"  component={AnimeDetailScreen} exact />
           <Route path="/todays" render={() => <TodayScreen />} exact={true} />
-          <Route path="/home" render={() => <HomeScreen />} exact={true} />
+          <Route path="/app/bar" render={() => <HomeScreen />} exact={true} />
           <Route path="/chatbot" render={() => <ChatBotScreen />} exact={true} />
           <Route path="/search" render={() => <SearchScreen />} exact={true} />
         </IonRouterOutlet>
@@ -35,7 +37,7 @@ function AppRoute() {
             <IonLabel>Todays</IonLabel>
           </IonTabButton>
 
-          <IonTabButton tab="home" href="/home">
+          <IonTabButton tab="home" href="/app/bar">
             <IonIcon icon={home} />
             <IonLabel>Home</IonLabel>
           </IonTabButton>
