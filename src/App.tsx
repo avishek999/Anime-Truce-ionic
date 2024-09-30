@@ -31,12 +31,14 @@ import '@ionic/react/css/palettes/dark.system.css';
 
 /* Theme variables */
 import './theme/variables.css';
-import Login from './pages/Login';
+import Login from './screens/LoginScreen';
 import Register from './pages/Register';
 import Menu from './pages/menu/Menu';
 import './components/styles.css'
 import { cog, person } from 'ionicons/icons';
 import AniDetails from './pages/AniDetails';
+import AnimeDetailScreen from './screens/AnimeDetailScreen';
+import AnimeEpisode from './screens/AnimeEpisode';
 
 setupIonicReact();
 
@@ -50,7 +52,11 @@ const App: React.FC = () => (
         </Route>
        <Route component={Register} path="/register" exact />
        <Route component={Menu} path="/app"  />
-     <Route component={AniDetails} path="/anime/:id" />
+       {/* <Route path="/anime/:id"  component={AnimeDetailScreen}/>
+       <Route path="/animes/:id"  component={AnimeEpisode}/> */}
+
+
+
       </IonRouterOutlet>
     </IonReactRouter>
   </IonApp>
