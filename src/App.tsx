@@ -1,5 +1,5 @@
 import { Redirect, Route } from 'react-router-dom';
-import { IonApp, IonRouterOutlet, setupIonicReact } from '@ionic/react';
+import { IonApp, IonIcon, IonLabel, IonRouterOutlet, IonTabBar, IonTabButton, setupIonicReact } from '@ionic/react';
 import { IonReactRouter } from '@ionic/react-router';
 
 /* Core CSS required for Ionic components to work properly */
@@ -31,15 +31,20 @@ import '@ionic/react/css/palettes/dark.system.css';
 
 /* Theme variables */
 import './theme/variables.css';
-import Login from './pages/Login';
+import Login from './screens/LoginScreen';
 import Register from './pages/Register';
 import Menu from './pages/menu/Menu';
 import './components/styles.css'
+import { cog, person } from 'ionicons/icons';
+import AniDetails from './pages/AniDetails';
+import AnimeDetailScreen from './screens/AnimeDetailScreen';
+import AnimeEpisode from './screens/AnimeEpisode';
 
 setupIonicReact();
 
 const App: React.FC = () => (
   <IonApp>
+   
     <IonReactRouter>
       <IonRouterOutlet>
         <Route exact path="/">
@@ -47,6 +52,10 @@ const App: React.FC = () => (
         </Route>
        <Route component={Register} path="/register" exact />
        <Route component={Menu} path="/app"  />
+       {/* <Route path="/anime/:id"  component={AnimeDetailScreen}/>
+       <Route path="/animes/:id"  component={AnimeEpisode}/> */}
+
+
 
       </IonRouterOutlet>
     </IonReactRouter>

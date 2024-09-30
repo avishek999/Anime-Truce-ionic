@@ -3,10 +3,9 @@ import React, { useState } from 'react';
 import HomeBanner from '../components/HomeBanner';
 import { person, search } from 'ionicons/icons';
 import RecentEpisode from '../components/RecentEpisode';
-import Example from '../components/BottomBar';
-import BottomBar from '../components/BottomBar';
 
-const List: React.FC = () => {
+
+const HomeScreen: React.FC = () => {
   const [loading, setLoading] = useState<boolean>(true);
   const [Topair, setTopair] = useState<any[]>([]);
   const [RecentData, setRecentData] = useState<any[]>([]);
@@ -92,4 +91,4 @@ const List: React.FC = () => {
   );
 };
 
-export default List;
+export default HomeScreen;
