@@ -51,8 +51,8 @@ const App: React.FC = () => (
         </Route>
        <Route component={Register} path="/register" exact />
        <Route component={Menu} path="/app"  />
-       {/* <Route path="/anime/:id"  component={AnimeDetailScreen}/>
-       <Route path="/animes/:id"  component={AnimeEpisode}/> */}
+       <Route path="/anime/:id"  component={AnimeDetailScreen}/>
+       <Route path="/animes/:id"  component={AnimeEpisode}/>
 
 
 

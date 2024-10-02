@@ -9,6 +9,7 @@ http://ionicframework.com/docs/theming/ */
     rgba(43, 12, 35, 1) 0%,
     rgba(5, 1, 19, 1) 100%
   );
+  --ion-color-favorite: #69bb7b;
   --primary-text: #fff;
   --swiper-bullet-inactive: #4f4a4a;
   --swiper-bullet-active: #ffffff;
@@ -16,4 +17,5 @@ http://ionicframework.com/docs/theming/ */
   --banner-heading-color: #d7d5d5;
   --banner-gradient-start: rgba(43, 12, 35, 0);
   --banner-gradient-end: rgba(5, 1, 19, 1);
+  background: var(--Primary-bg);
 }

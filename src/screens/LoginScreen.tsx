@@ -68,7 +68,7 @@ const LoginScreen: React.FC = () => {
      {!intro ? ( <Intro onFinish={finishIntro} /> ) : (
     <IonPage>
   
-      <div className="ion-padding login_content]" >
+      <div className="ion-padding login_content" >
         <IonGrid fixed>
           <IonRow className="ion-justify-content-center">
             <IonCol size="12" sizeMd="8" sizeLg="6" sizeXl="4" >
@@ -79,7 +79,7 @@ const LoginScreen: React.FC = () => {
           </IonRow>
        <IonRow className="ion-justify-content-center">
         <IonCol size="12" sizeMd="8" sizeLg="6" sizeXl="4" >
-        <IonCard>
+        <IonCard className="backdrop-blur-sm  bg-black/40">
           <IonCardContent className="login">
             <form onSubmit={handleLogin}>
               <IonInput
@@ -90,6 +90,8 @@ const LoginScreen: React.FC = () => {
                 value={email}
                 onIonChange={(e: CustomEvent) => setEmail(e.detail.value!)}
                 placeholder="Enter email"
+                className=""
+                color="dark"
               />
               <IonInput
                 className="ion-margin-top"
@@ -100,6 +102,7 @@ const LoginScreen: React.FC = () => {
                 value={password}
                 onIonChange={(e: CustomEvent) => setPassword(e.detail.value!)}
                 placeholder="Enter email"
+                color="dark"
               />
               <IonButton
                 className="ion-margin-top"
@@ -112,8 +115,8 @@ const LoginScreen: React.FC = () => {
                 <IonIcon icon={logInOutline} />
               </IonButton>
               <IonButton
-                color={"dark"}
-                className="ion-margin-top"
+               color={"dark"}
+                className="ion-margin-top "
                 expand="block"
                 routerLink="/register"
                 shape={'round'}

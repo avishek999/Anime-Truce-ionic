@@ -21,9 +21,6 @@ function AppRoute() {
     <IonReactRouter>
       <IonTabs>
         <IonRouterOutlet>
-          <Route exact path="/app/bar">
-          
-          </Route>
           <Route path="/animes/:id"  component={AnimeEpisode}/>
           <Route path="/anime/:id"  component={AnimeDetailScreen} exact />
           <Route path="/todays" render={() => <TodayScreen />} exact={true} />
