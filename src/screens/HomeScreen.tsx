@@ -1,6 +1,7 @@
 import { IonButtons, IonContent, IonHeader, IonMenuButton, IonPage, IonTitle, IonToolbar, useIonViewWillEnter,IonIcon } from '@ionic/react';
 import React, { useState } from 'react';
 import HomeBanner from '../components/HomeBanner';
+import './HomeScreen.scss'
 import { person, search } from 'ionicons/icons';
 import RecentEpisode from '../components/RecentEpisode';
 
@@ -63,7 +64,7 @@ const HomeScreen: React.FC = () => {
   return (
     <IonPage>
       <IonHeader>
-        <IonToolbar>
+        {/* <IonToolbar>
           <IonButtons slot="start">
             <IonMenuButton />
           </IonButtons>
@@ -71,9 +72,9 @@ const HomeScreen: React.FC = () => {
           <IonIcon slot='end'  icon={search}/>
           </IonButtons>
           <IonTitle>Anime Truce</IonTitle>
-        </IonToolbar>
+        </IonToolbar> */}
       </IonHeader>
-      <IonContent className="">
+      <div className="Home_Screen_Content">
         {!loading && (
           <HomeBanner 
             slides={Topair.map(anime => ({
@@ -84,9 +85,10 @@ const HomeScreen: React.FC = () => {
             }))}
           />
         )}
-       {!loading && <RecentEpisode slides={RecentData.map(anime => ({image: anime.image, title: anime.title,id: anime.id}))}  />}
+        
+       {/* {!loading && <RecentEpisode slides={RecentData.map(anime => ({image: anime.image, title: anime.title,id: anime.id}))}  />} */}
      
-      </IonContent>
+      </div>
     </IonPage>
   );
 };

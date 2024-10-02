@@ -13,6 +13,7 @@ import HomeScreen from './screens/HomeScreen';
 import ChatBotScreen from './screens/ChatBotScreen';
 import SearchScreen from './screens/SearchScreen';
 import AnimeEpisode from './screens/AnimeEpisode';
+import './AppRoute.scss'
 
 
 function AppRoute() {
@@ -28,17 +29,17 @@ function AppRoute() {
           <Route path="/todays" render={() => <TodayScreen />} exact={true} />
           <Route path="/app/bar" render={() => <HomeScreen />} exact={true} />
           <Route path="/chatbot" render={() => <ChatBotScreen />} exact={true} />
-          <Route path="/search" render={() => <SearchScreen />} exact={true} />
+          {/* <Route path="/search" render={() => <SearchScreen />} exact={true} /> */}
         </IonRouterOutlet>
 
-        <IonTabBar slot="bottom" className="glass-tab-bar">
+        <IonTabBar slot="bottom" className="glass_tab_bar">
           <IonTabButton tab="todays" href="/todays">
             <IonIcon icon={sparkles} />
             <IonLabel>Todays</IonLabel>
           </IonTabButton>
 
           <IonTabButton tab="home" href="/app/bar">
-            <IonIcon icon={home} />
+            <IonIcon icon={home} size='30'/>
             <IonLabel>Home</IonLabel>
           </IonTabButton>
 
@@ -47,10 +48,10 @@ function AppRoute() {
             <IonLabel>Chat bot</IonLabel>
           </IonTabButton>
 
-          <IonTabButton tab="search" href="/search">
+          {/* <IonTabButton tab="search" href="/search">
             <IonIcon icon={search} />
             <IonLabel>Search</IonLabel>
-          </IonTabButton>
+          </IonTabButton> */}
         </IonTabBar>
       </IonTabs>
 

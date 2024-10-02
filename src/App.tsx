@@ -39,7 +39,6 @@ import { cog, person } from 'ionicons/icons';
 import AniDetails from './pages/AniDetails';
 import AnimeDetailScreen from './screens/AnimeDetailScreen';
 import AnimeEpisode from './screens/AnimeEpisode';
-
 setupIonicReact();
 
 const App: React.FC = () => (

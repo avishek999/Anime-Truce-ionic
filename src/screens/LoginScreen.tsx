@@ -21,6 +21,7 @@ import React, { useEffect, useState } from "react";
 import Intro from "../components/Intro";
 import {Preferences} from "@capacitor/preferences";
 import { Router } from "react-router";
+import './LoginScreen.scss'
 
 
 
@@ -66,12 +67,8 @@ const LoginScreen: React.FC = () => {
     <>
      {!intro ? ( <Intro onFinish={finishIntro} /> ) : (
     <IonPage>
-      <IonHeader>
-        <IonToolbar>
-          <IonTitle>Anime Truce</IonTitle>
-        </IonToolbar>
-      </IonHeader>
-      <IonContent className="ion-padding" >
+  
+      <div className="ion-padding login_content]" >
         <IonGrid fixed>
           <IonRow className="ion-justify-content-center">
             <IonCol size="12" sizeMd="8" sizeLg="6" sizeXl="4" >
@@ -134,7 +131,7 @@ const LoginScreen: React.FC = () => {
        
         
         </IonGrid>
-      </IonContent>
+      </div>
     </IonPage>
      )}
     </>
