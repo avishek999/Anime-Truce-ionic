@@ -9,7 +9,7 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 
-import './RecentEpisode.css';
+import './RecentEpisode.scss';
 
 // import required modules
 import { Pagination, Navigation } from 'swiper/modules';
@@ -27,7 +27,7 @@ interface Slide {
 const RecentEpisode: React.FC <RecentEpisodeProps> = ({ slides }) => {
   return (
     <>
-        <h1>Recent Episode</h1>
+        <h1 className='mt-4 text-2xl font-bold ml-2'>Recent Episode</h1>
         <Swiper
           slidesPerView={2}
           centeredSlides={true}
@@ -39,7 +39,7 @@ const RecentEpisode: React.FC <RecentEpisodeProps> = ({ slides }) => {
         >
            {slides.map((slide, index) => (
           <SwiperSlide key={index} className="RecentEpiBanner">
-            <img className='RecentEpiBannerImg' src={slide.image} alt={`Anime ${index}`} />
+            <img className='RecentEpiBannerImg ' src={slide.image} alt={`Anime ${index}`} />
             <p className='RecentEpiBannerTitle' >{slide.title}</p>
           </SwiperSlide>
     

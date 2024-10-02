@@ -3,12 +3,17 @@ import React, { useRef } from "react";
 import { Autoplay, Pagination } from "swiper/modules";
 import { IonRouterLink, useIonRouter } from "@ionic/react";
 import { FaStar } from "react-icons/fa";
+import { FaSearch } from "react-icons/fa";
+import { PiAndroidLogoDuotone } from "react-icons/pi";
+import { FaUserCircle } from "react-icons/fa";
+
 
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/effect-fade";
 import "swiper/css/pagination";
 import "./HomeBanner.scss";
+
 
 // Types for the Slide and HomeBannerProps
 interface Slide {
@@ -24,7 +29,10 @@ interface HomeBannerProps {
 
 // Main component function
 const HomeBanner: React.FC<HomeBannerProps> = ({ slides }) => {
+  
   const router = useIonRouter();
+
+
 
   // Handlers and refs
   const progressCircleRef = useRef<SVGElement | null>(null);
@@ -43,32 +51,41 @@ const HomeBanner: React.FC<HomeBannerProps> = ({ slides }) => {
         disableOnInteraction: false,
       }}
       pagination={{ clickable: true }}
-      navigation={true}
+      navigation={false}
       modules={[Autoplay, Pagination]}
       className="home-banner-swiper"
+      
     >
-      {slides.map((slide) => (
-        <SwiperSlide
-          key={slide.id}
-          className="Banner"
-          onClick={() => handleSlideClick(slide.id)}
-        >
-          <IonRouterLink>
-            <p className="BannerHeading">Top Airing</p>
-            <h4 className="BannerTitle">{slide.title}</h4>
-            <div className="text-white flex items-center gap-2 absolute bottom-[20px] text-sm left-[12px]">
-              <FaStar className="text-yellow-400" />
-              2.5k
-            </div>
-            <img
-              className="BannerImg"
-              src={slide.image}
-              alt={`Anime ${slide.title}`}
-              loading="lazy"
-            />
-          </IonRouterLink>
-        </SwiperSlide>
-      ))}
+      <PiAndroidLogoDuotone   className="z-50 absolute top-4 left-5 " color="orange
+      " size={30}/>
+      <FaSearch  className="z-50 absolute top-4 right-14 " color="#fff" size={30}  />
+      <FaUserCircle className="z-50 absolute top-4 right-4 " color="#fff" size={30} />
+
+      <div className="banner_container">
+
+        {slides.map((slide) => (
+          <SwiperSlide
+            key={slide.id}
+            className="Banner"
+            onClick={() => handleSlideClick(slide.id)}
+          >
+            <IonRouterLink>
+              <img
+                className="BannerImg"
+                src={slide.image}
+                alt={`Anime ${slide.title}`}
+                loading="lazy"
+              />
+              <p className="BannerHeading z-10">Top Airing</p>
+              <h4 className="BannerTitle">{slide.title}</h4>
+              <div className="text-yellow-500 flex items-center gap-2 absolute bottom-[20px] text-sm left-[12px] z-10">
+                <FaStar className="text-yellow-400 z-30" />
+                2.5k
+              </div>
+            </IonRouterLink>
+          </SwiperSlide>
+        ))}
+      </div>
     </Swiper>
   );
 };

@@ -39,6 +39,7 @@ import { cog, person } from 'ionicons/icons';
 import AniDetails from './pages/AniDetails';
 import AnimeDetailScreen from './screens/AnimeDetailScreen';
 import AnimeEpisode from './screens/AnimeEpisode';
+import RegisterScreen from './screens/RegisterScreen';
 setupIonicReact();
 
 const App: React.FC = () => (
@@ -49,13 +50,10 @@ const App: React.FC = () => (
         <Route exact path="/">
          <Login />
         </Route>
-       <Route component={Register} path="/register" exact />
+       <Route component={RegisterScreen} path="/register" exact />
        <Route component={Menu} path="/app"  />
        <Route path="/anime/:id"  component={AnimeDetailScreen}/>
        <Route path="/animes/:id"  component={AnimeEpisode}/>
-
-
-
       </IonRouterOutlet>
     </IonReactRouter>
   </IonApp>

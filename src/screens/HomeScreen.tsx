@@ -1,9 +1,10 @@
-import { IonButtons, IonContent, IonHeader, IonMenuButton, IonPage, IonTitle, IonToolbar, useIonViewWillEnter,IonIcon } from '@ionic/react';
+import { IonButtons, IonContent, IonHeader, IonMenuButton, IonPage, IonTitle, IonToolbar, useIonViewWillEnter,IonIcon, IonSkeletonText } from '@ionic/react';
 import React, { useState } from 'react';
 import HomeBanner from '../components/HomeBanner';
 import './HomeScreen.scss'
 import { person, search } from 'ionicons/icons';
 import RecentEpisode from '../components/RecentEpisode';
+import { Button } from '@/components/ui/button';
 
 
 const HomeScreen: React.FC = () => {
@@ -74,7 +75,8 @@ const HomeScreen: React.FC = () => {
           <IonTitle>Anime Truce</IonTitle>
         </IonToolbar> */}
       </IonHeader>
-      <div className="Home_Screen_Content">
+      <div className="Home_Screen_Content" >
+        
         {!loading && (
           <HomeBanner 
             slides={Topair.map(anime => ({
@@ -86,9 +88,15 @@ const HomeScreen: React.FC = () => {
           />
         )}
         
+       {!loading && <RecentEpisode slides={RecentData.map(anime => ({image: anime.image, title: anime.title,id: anime.id}))}  />}
        {/* {!loading && <RecentEpisode slides={RecentData.map(anime => ({image: anime.image, title: anime.title,id: anime.id}))}  />} */}
+        
+
+
      
-      </div>
+       {/* <IonSkeletonText animated={true} style={{ width: '80px' }}></IonSkeletonText> */}
+       </div>
+  
     </IonPage>
   );
 };
