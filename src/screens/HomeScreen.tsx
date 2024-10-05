@@ -61,7 +61,7 @@ const HomeScreen: React.FC = () => {
 
   return (
     <IonPage>
-      <div className="Home_Screen_Content">
+      <div className="Home_Screen_Content overflow-auto">
         {!loading && (
           <HomeBanner
             slides={Topair.map((anime) => ({
@@ -81,7 +81,11 @@ const HomeScreen: React.FC = () => {
               id: anime.id,
             }))}
           />
+          
         )}
+      
+       
+        
       </div>
     </IonPage>
   );
