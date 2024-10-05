@@ -11,7 +11,7 @@ const TodayScreen
                     <IonTitle>Today Screen</IonTitle>
                 </IonToolbar>
             </IonHeader>
-            <IonContent className="ion-padding">
+            <IonContent className="ion-padding ">
                 UI goes here...
             </IonContent>
         </IonPage>

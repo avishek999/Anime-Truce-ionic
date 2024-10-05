@@ -1,5 +1,5 @@
 /// <reference types="vitest" />
-
+import path from "path"
 import legacy from '@vitejs/plugin-legacy'
 import react from '@vitejs/plugin-react'
 import { defineConfig } from 'vite'
@@ -10,6 +10,11 @@ export default defineConfig({
     react(),
     legacy()
   ],
+  resolve: {
+    alias: {
+      "@": path.resolve(__dirname, "./src"),
+    },
+  },
   test: {
     globals: true,
     environment: 'jsdom',
