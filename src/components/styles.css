@@ -9,7 +9,7 @@
     flex-direction: column;
     text-align: center;
     font-size: 18px;
-    background: #000;
+    background: var( --Primary-bg);
     padding-bottom: 50px;
     /* Center slide text vertically */
     display: flex;
