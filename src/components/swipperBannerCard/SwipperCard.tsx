@@ -30,13 +30,13 @@ const SwipperCard: React.FC<SwipperCardProps> = ({ slides }) => {
   return (
     <>
       <Swiper
-        slidesPerView={5}
+        slidesPerView={4}
         spaceBetween={10}
         modules={[Pagination, Navigation]}
         className="SwiperCardContainer"
       >
         {slides.map((slide) => (
-        <SwiperSlide key={slide.id} className="SwiperCard ">
+        <SwiperSlide key={slide.id} className="SwiperCard  ">
             <IonRouterLink
               routerLink={`/anime/${slide.id}`}
               routerDirection="forward"
