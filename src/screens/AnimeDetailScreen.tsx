@@ -1,4 +1,7 @@
 import {
+  IonBackButton,
+  IonButton,
+  IonButtons,
   IonContent,
   IonHeader,
   IonPage,
@@ -44,7 +47,13 @@ const AnimeDetailScreen: React.FC = () => {
     <IonPage>
       <IonHeader>
         <IonToolbar>
-          <IonTitle>{slideDetails ? slideDetails.title : "Loading..."}</IonTitle>
+          <IonButtons>
+            <IonBackButton />
+
+            <IonTitle>
+              {slideDetails ? slideDetails.title : "Loading..."}
+            </IonTitle>
+          </IonButtons>
         </IonToolbar>
       </IonHeader>
       <IonContent className="ion-padding" scrollY={true}>
@@ -62,7 +71,10 @@ const AnimeDetailScreen: React.FC = () => {
 
             <h5>Episodes:</h5>
             {slideDetails.episodes.map((episode: Episode) => (
-              <p key={episode.id} onClick={() => handleEpisodeClick(episode.id)}>
+              <p
+                key={episode.id}
+                onClick={() => handleEpisodeClick(episode.id)}
+              >
                 Episode no {episode.number}
               </p>
             ))}

@@ -1,12 +1,11 @@
 import { Swiper, SwiperSlide } from "swiper/react";
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import { Autoplay, Pagination } from "swiper/modules";
 import { IonRouterLink, useIonRouter } from "@ionic/react";
 import { FaStar } from "react-icons/fa";
 import { FaSearch } from "react-icons/fa";
 import { PiAndroidLogoDuotone } from "react-icons/pi";
 import { FaUserCircle } from "react-icons/fa";
-
 
 // Import Swiper styles
 import "swiper/css";
@@ -29,7 +28,7 @@ interface HomeBannerProps {
 
 // Main component function
 const HomeBanner: React.FC<HomeBannerProps> = ({ slides }) => {
-  
+ 
   const router = useIonRouter();
 
 
@@ -38,11 +37,10 @@ const HomeBanner: React.FC<HomeBannerProps> = ({ slides }) => {
   const progressCircleRef = useRef<SVGElement | null>(null);
   const progressContentRef = useRef<HTMLSpanElement | null>(null);
 
-  const handleSlideClick = (id: string) => {
-    router.push(`/anime/${id}`);
-  };
+
 
   return (
+  
     <Swiper
       spaceBetween={30}
       centeredSlides={true}
@@ -64,16 +62,16 @@ const HomeBanner: React.FC<HomeBannerProps> = ({ slides }) => {
       <div className="banner_container">
 
         {slides.map((slide) => (
+       
           <SwiperSlide
             key={slide.id}
             className="Banner"
-            onClick={() => handleSlideClick(slide.id)}
           >
-            <IonRouterLink>
+          <IonRouterLink  routerLink={`/anime/${slide.id}`} routerDirection="forward"> 
               <img
                 className="BannerImg"
                 src={slide.image}
-                alt={`Anime ${slide.title}`}
+                alt="Loading Your fav anime"
                 loading="lazy"
               />
               <p className="BannerHeading z-10">Top Airing</p>

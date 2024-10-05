@@ -19,8 +19,7 @@ import {
   home,
 } from "ionicons/icons";
 import { RiRobot2Fill } from "react-icons/ri";
-// style Imports
-
+// Style Imports
 import AnimeDetailScreen from "./screens/AnimeDetailScreen";
 import TodayScreen from "./screens/TodayScreen";
 import HomeScreen from "./screens/HomeScreen";
@@ -33,18 +32,18 @@ function AppRoute() {
   return (
     <IonReactRouter>
       <IonTabs>
-        <Route exact path="/app/bar"></Route>
-
         <IonRouterOutlet>
-          {/* <Route path="/animes/:id" component={AnimeEpisode} /> */}
-          {/* <Route path="/anime/:id" component={AnimeDetailScreen} exact /> */}
-          <Route path="/todays" render={() => <TodayScreen />} exact={true} />
-          <Route path="/app/bar" render={() => <HomeScreen />} exact={true} />
-          <Route
-            path="/chatbot"
-            render={() => <ChatBotScreen />}
-            exact={true}
-          />
+          {/* Specific Routes */}
+          <Route path="/animes/:id" component={AnimeEpisode} exact />
+          <Route path="/anime/:id" component={AnimeDetailScreen} exact />
+          <Route path="/todays" component={TodayScreen} exact />
+          <Route path="/chatbot" component={ChatBotScreen} exact />
+          
+          {/* Default redirect route */}
+          <Route path="/app/bar" render={() => <HomeScreen />} exact />
+          
+          {/* Redirect to default tab */}
+          <Redirect exact from="/app" to="/app/bar" />
         </IonRouterOutlet>
 
         <IonTabBar slot="bottom" className="glass_tab_bar">
