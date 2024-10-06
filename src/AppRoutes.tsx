@@ -33,6 +33,7 @@ function AppRoute() {
     <IonReactRouter>
       <IonTabs>
         <IonRouterOutlet>
+        
           {/* Specific Routes */}
           <Route path="/animes/:id" component={AnimeEpisode} exact />
           <Route path="/anime/:id" component={AnimeDetailScreen} exact />
