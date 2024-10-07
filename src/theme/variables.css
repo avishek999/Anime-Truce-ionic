@@ -13,6 +13,7 @@ http://ionicframework.com/docs/theming/ */
     rgba(43, 12, 35, 1) 0%,
     rgba(5, 1, 19, 1) 100%
   );
+  --text-primary: black;
   --ion-color-favorite: #69bb7b;
   --primary-text: #fff;
   --swiper-bullet-inactive: #4f4a4a;
@@ -27,3 +28,4 @@ http://ionicframework.com/docs/theming/ */
 .backg{
   background: var(--Primary-bg);
 }
+

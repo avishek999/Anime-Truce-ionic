@@ -36,7 +36,8 @@ const SwipperCard: React.FC<SwipperCardProps> = ({ slides }) => {
         className="SwiperCardContainer"
       >
         {slides.map((slide) => (
-        <SwiperSlide key={slide.id} className="SwiperCard  ">
+          
+        <SwiperSlide key={slide.id} className="SwiperCard p-4  ">
             <IonRouterLink
               routerLink={`/anime/${slide.id}`}
               routerDirection="forward"
