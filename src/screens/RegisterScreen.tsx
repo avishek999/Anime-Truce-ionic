@@ -23,6 +23,7 @@ import {
   personCircleOutline,
 } from "ionicons/icons";
 import React, { useState } from "react";
+import './RegisterScreen.scss';
 
 const RegisterScreen: React.FC = () => {
   const [email, setEmail] = useState<string>(""); // State to track email input
@@ -38,15 +39,15 @@ const RegisterScreen: React.FC = () => {
 
   return (
     <IonPage>
-      <IonHeader>
-        <IonToolbar>
-          <IonButton fill="clear" slot="start">
+      <IonHeader >
+        <IonToolbar className="header">
+          <IonButton fill="clear" color={'dark'} slot="start">
             <IonBackButton defaultHref="/" />
           </IonButton>
           <IonTitle>Anime Truce</IonTitle>
         </IonToolbar>
       </IonHeader>
-      <IonContent className="ion-padding">
+      <div className="ion-padding register_content">
         <IonGrid>
            <IonRow className="ion-justify-content-center">
             <IonCol size="12" sizeMd="8" sizeLg="6" sizeXl="4">
@@ -55,8 +56,8 @@ const RegisterScreen: React.FC = () => {
            </IonRow>
            <IonRow className="ion-justify-content-center">
             <IonCol size="12" sizeMd="8" sizeLg="6" sizeXl="4">
-            <IonCard>
-          <IonCardContent className="login">
+            <IonCard  className="backdrop-blur-sm  bg-black/40">
+          <IonCardContent className="login ">
             <form onSubmit={handleRegister}>
               <IonInput
                 fill="outline"
@@ -66,6 +67,7 @@ const RegisterScreen: React.FC = () => {
                 value={name}
                 onIonChange={(e: CustomEvent) => setName(e.detail.value!)}
                 placeholder="Enter Your name"
+                color="dark"
               />
 
               <IonInput
@@ -77,6 +79,7 @@ const RegisterScreen: React.FC = () => {
                 value={email}
                 onIonChange={(e: CustomEvent) => setEmail(e.detail.value!)}
                 placeholder="Enter email"
+                color="dark"
               />
               <IonInput
                 className="ion-margin-top"
@@ -87,6 +90,7 @@ const RegisterScreen: React.FC = () => {
                 value={password}
                 onIonChange={(e: CustomEvent) => setPassword(e.detail.value!)}
                 placeholder="Enter email"
+                color="dark"
               />
               <IonButton
                 className="ion-margin-top"
@@ -94,6 +98,7 @@ const RegisterScreen: React.FC = () => {
                 type="submit"
                 color={'dark'}
                 shape={'round'}
+                
               >
                 Create Account
                 <IonIcon icon={checkmarkDoneOutline}></IonIcon>
@@ -106,7 +111,7 @@ const RegisterScreen: React.FC = () => {
         </IonGrid>
        
        
-      </IonContent>
+      </div>
     </IonPage>
   );
 };

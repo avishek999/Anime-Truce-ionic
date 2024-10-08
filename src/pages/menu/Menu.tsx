@@ -16,13 +16,9 @@ import {
   IonTitle,
   IonToolbar,
 } from "@ionic/react";
-import { cog, home, homeOutline, list, logOutOutline, person, settings } from "ionicons/icons";
+import {  home,  logOutOutline, settings } from "ionicons/icons";
 import React from "react";
 import { Redirect, Route } from "react-router";
-import List from "../List";
-import Setting from "../Setting";
-import { Icon } from "ionicons/dist/types/components/icon/icon";
-import HomeScreen from "../../screens/HomeScreen";
 import SettingScreen from "../../screens/SettingScreen";
 import AppRoute from "../../AppRoutes";
 

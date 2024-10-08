@@ -1,4 +1,6 @@
 import {
+  IonBackButton,
+  IonButtons,
   IonContent,
   IonHeader,
   IonPage,
@@ -8,20 +10,8 @@ import {
 } from "@ionic/react";
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router";
-
-interface AniDetails {
-  title: string;
-  image: string;
-  description: string;
-  totalEpisodes: number;
-  genres: string[];
-  episodes: Episode[];
-}
-
-interface Episode {
-  id: string;
-  number: number;
-}
+import { AniDetails } from "@/interface/Interface";
+import { Episode } from "@/interface/Interface";
 
 const AnimeDetailScreen: React.FC = () => {
   const { id } = useParams<{ id: string }>();
@@ -44,7 +34,13 @@ const AnimeDetailScreen: React.FC = () => {
     <IonPage>
       <IonHeader>
         <IonToolbar>
-          <IonTitle>{slideDetails ? slideDetails.title : "Loading..."}</IonTitle>
+          <IonButtons>
+            <IonBackButton />
+
+            <IonTitle>
+              {slideDetails ? slideDetails.title : "Loading..."}
+            </IonTitle>
+          </IonButtons>
         </IonToolbar>
       </IonHeader>
       <IonContent className="ion-padding" scrollY={true}>
@@ -62,7 +58,10 @@ const AnimeDetailScreen: React.FC = () => {
 
             <h5>Episodes:</h5>
             {slideDetails.episodes.map((episode: Episode) => (
-              <p key={episode.id} onClick={() => handleEpisodeClick(episode.id)}>
+              <p
+                key={episode.id}
+                onClick={() => handleEpisodeClick(episode.id)}
+              >
                 Episode no {episode.number}
               </p>
             ))}

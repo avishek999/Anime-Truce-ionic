@@ -1,4 +1,4 @@
-package com.getcapacitor.myapp;
+package com.getcapacitor.anime truce;
 
 import static org.junit.Assert.*;
 
