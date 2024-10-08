@@ -6,7 +6,7 @@ import { FaStar } from "react-icons/fa";
 import { FaSearch } from "react-icons/fa";
 import { PiAndroidLogoDuotone } from "react-icons/pi";
 import { FaUserCircle } from "react-icons/fa";
-
+import { HomeBannerProps } from "@/interface/Interface";
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/effect-fade";
@@ -15,16 +15,7 @@ import "./HomeBanner.scss";
 
 
 // Types for the Slide and HomeBannerProps
-interface Slide {
-  image: string;
-  title: string;
-  url: string;
-  id: string;
-}
 
-interface HomeBannerProps {
-  slides: Slide[];
-}
 
 // Main component function
 const HomeBanner: React.FC<HomeBannerProps> = ({ slides }) => {

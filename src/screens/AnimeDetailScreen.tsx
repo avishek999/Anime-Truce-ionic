@@ -1,6 +1,5 @@
 import {
   IonBackButton,
-  IonButton,
   IonButtons,
   IonContent,
   IonHeader,
@@ -11,20 +10,8 @@ import {
 } from "@ionic/react";
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router";
-
-interface AniDetails {
-  title: string;
-  image: string;
-  description: string;
-  totalEpisodes: number;
-  genres: string[];
-  episodes: Episode[];
-}
-
-interface Episode {
-  id: string;
-  number: number;
-}
+import { AniDetails } from "@/interface/Interface";
+import { Episode } from "@/interface/Interface";
 
 const AnimeDetailScreen: React.FC = () => {
   const { id } = useParams<{ id: string }>();

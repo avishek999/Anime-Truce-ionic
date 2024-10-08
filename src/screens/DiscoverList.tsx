@@ -1,4 +1,5 @@
 
+import AllAnimeList from "@/components/AllAnimeList";
 import React, { useState } from "react";
 
 
@@ -9,6 +10,7 @@ const DiscoverList: React.FC = () => {
     const [selectedCategory, setSelectedCategory] = useState('All'); 
   
   return (
+    <>
     <ul className="flex items-center gap-4 w-full mt-4 overflow-x-auto whitespace-nowrap">
     {categories.map((category, index) => (
       <li 
@@ -22,6 +24,8 @@ const DiscoverList: React.FC = () => {
       </li>
     ))}
   </ul>
+ <AllAnimeList />
+ </>
   );
 };
 

@@ -1,14 +1,8 @@
-import {
-  IonContent,
-  IonHeader,
-  IonPage,
-  IonRouterLink,
-  IonTitle,
-  IonToolbar,
-} from "@ionic/react";
+import { IonRouterLink } from "@ionic/react";
 import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import './SwippereCard.scss'
+import "./SwippereCard.scss";
+import { HomeBannerProps } from "@/interface/Interface";
 
 // Import Swiper styles
 import "swiper/css";
@@ -17,16 +11,8 @@ import "swiper/css/navigation";
 
 // import required modules
 import { Pagination, Navigation } from "swiper/modules";
-interface Slide {
-  image: string;
-  title: string;
-  id: string;
-}
 
-interface SwipperCardProps {
-  slides: Slide[];
-}
-const SwipperCard: React.FC<SwipperCardProps> = ({ slides }) => {
+const SwipperCard: React.FC<HomeBannerProps> = ({ slides }) => {
   return (
     <>
       <Swiper
@@ -36,13 +22,11 @@ const SwipperCard: React.FC<SwipperCardProps> = ({ slides }) => {
         className="SwiperCardContainer"
       >
         {slides.map((slide) => (
-          
-        <SwiperSlide key={slide.id} className="SwiperCard p-4  ">
+          <SwiperSlide key={slide.id} className="SwiperCard p-4  ">
             <IonRouterLink
               routerLink={`/anime/${slide.id}`}
               routerDirection="forward"
             >
-            
               <img
                 className="SwiperCardImg "
                 src={slide.image}
