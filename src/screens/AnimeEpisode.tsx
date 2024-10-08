@@ -8,20 +8,7 @@ import {
 import React, { useEffect, useRef, useState } from "react";
 import { useParams } from "react-router";
 import Hls from "hls.js"; // Import HLS.js
-
-interface Source {
-  url: string;
-  isM3U8: boolean;
-  quality: string;
-}
-
-interface EpisodeDetail {
-  headers: {
-    Referer: string;
-  };
-  sources: Source[];
-  download: string;
-}
+import { EpisodeDetail } from "@/interface/Interface";
 
 const AnimeEpisode: React.FC = () => {
   const { id } = useParams<{ id: string }>();

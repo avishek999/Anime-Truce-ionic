@@ -2,17 +2,18 @@ import React from "react";
 import { IonContent, IonButton, IonPage, IonText } from "@ionic/react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Navigation } from "swiper/modules";
+import { IntroProps } from "@/interface/Interface";
+
 
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/pagination";
 import "./styles.css";
 
-interface ContainProps {
-  onFinish: () => void;
-}
 
-const Intro: React.FC<ContainProps> = ({ onFinish }) => {
+
+
+const Intro: React.FC<IntroProps> = ({ onFinish }) => {
   return (
     <>
       <Swiper

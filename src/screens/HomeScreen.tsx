@@ -4,9 +4,9 @@ import HomeBanner from "../components/HomeBanner";
 import "./HomeScreen.scss";
 
 import RecentEpisode from "../components/RecentEpisode";
-import dotenv from "dotenv";
 import DiscoverList from "./DiscoverList";
 import GenreList from "./GenreList";
+import AllApis from "@/utils/AllApis";
 
 const HomeScreen: React.FC = () => {
   const animeHeadings = [
@@ -30,48 +30,6 @@ const HomeScreen: React.FC = () => {
   if (!apiUrl) {
     throw new Error("API URL is not defined in the environment variables.");
   }
-  useIonViewWillEnter(() => {
-    const fetchTopAiring = async () => {
-      try {
-        const topAir = await topAiring();
-        console.log("top Airing", topAir.results);
-        setTopair(topAir.results.slice(0, 10));
-        setLoading(false);
-      } catch (error) {
-        console.error("Error fetching top airing:", error);
-      }
-    };
-
-    fetchTopAiring();
-  });
-
-  const topAiring = async () => {
-    const data = await fetch(`${apiUrl}/top-airing`);
-    const topAir = await data.json();
-    return topAir;
-  };
-
-  useIonViewWillEnter(() => {
-    const RecentEpi = async () => {
-      try {
-        const ReEpi = await recentEpisode();
-        setRecentData(ReEpi.results.slice(0, 10));
-        console.log("Recent epi", ReEpi.results);
-        setLoading(false);
-      } catch (error) {
-        console.error("Error fetching top airing:", error);
-      }
-    };
-
-    RecentEpi();
-  });
-
-  const recentEpisode = async () => {
-    const Data = await fetch(`${apiUrl}/recent-episodes`);
-    const recentEp = await Data.json();
-    console.log("ReData", recentEp);
-    return recentEp;
-  };
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -95,6 +53,21 @@ const HomeScreen: React.FC = () => {
   return (
     <IonPage>
       <div className="Home_Screen_Content overflow-y-auto overflow-x-hidden">
+        <AllApis
+          url="/top-airing"
+          setData={setTopair}
+          setLoading={setLoading}
+          limit={10}
+        />
+
+        {/* Fetch recent episodes using AllApis */}
+        <AllApis
+          url="/recent-episodes"
+          setData={setRecentData}
+          setLoading={setLoading}
+          limit={10}
+        />
+
         {!loading && (
           <HomeBanner
             slides={Topair.map((anime) => ({
@@ -222,16 +195,18 @@ const HomeScreen: React.FC = () => {
         </div>
         <div>{selected === "discover" ? <DiscoverList /> : <GenreList />}</div>
         <div className="relative w-100 flex justify-center mt-20 items-center ">
-      
           <div className="backdrop-blur-sm sticky   bg-white/20 border border-neutral-500 h-20  w-96 rounded-xl ">
-            <div className="flex relative items-center ">             
+            <div className="flex relative items-center ">
               <img
                 className="absolute bottom-[-80px]  "
                 width={200}
                 src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/c7bced49-73a3-43c1-b3ce-fe419a596a72/dha89lw-9485745d-1a8d-4a6f-b338-5685f50a8dd5.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcL2M3YmNlZDQ5LTczYTMtNDNjMS1iM2NlLWZlNDE5YTU5NmE3MlwvZGhhODlsdy05NDg1NzQ1ZC0xYThkLTRhNmYtYjMzOC01Njg1ZjUwYThkZDUucG5nIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.NNgnkLL04vUeylQ1IxJwuEMjXmFvLYyfJX3EOGE69Rc"
                 alt=""
               />
-              <h4 className="absolute text-2xl right-5 top-5 font-bold  text-white/60 "> <span className="text-purple-200/60 ">Anime</span> Truce</h4>
+              <h4 className="absolute text-2xl right-5 top-5 font-bold  text-white/60 ">
+                {" "}
+                <span className="text-purple-200/60 ">Anime</span> Truce
+              </h4>
             </div>
           </div>
         </div>
