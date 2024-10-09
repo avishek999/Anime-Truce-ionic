@@ -27,7 +27,7 @@ const AllApis: React.FC<AllApiComponentProps> = ({ url,limit, setData, setLoadin
     fetchApiData();
   });
 
-  return null; // This component handles the logic, so no JSX is needed here.
+  return null; 
 };
 
 export default AllApis;

@@ -23,8 +23,14 @@ const DiscoverList: React.FC = () => {
         {category}
       </li>
     ))}
-  </ul>
- <AllAnimeList />
+  </ul> 
+  
+  { selectedCategory === 'All' && <AllAnimeList  url="/anime-list"/>}
+  {/* { selectedCategory === 'Popular' && <AllAnimeList  url="/dragon"/>} */}
+
+
+
+ 
  </>
   );
 };

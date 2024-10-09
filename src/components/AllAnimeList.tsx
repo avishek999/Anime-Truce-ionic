@@ -1,26 +1,22 @@
 import AllApis from "@/utils/AllApis";
 import { IonRouterLink } from "@ionic/react";
 import React, { useState } from "react";
+import { IAllAnimeList } from "@/interface/Interface";
 
-const AllAnimeList: React.FC = () => {
+
+const AllAnimeList: React.FC<IAllAnimeList> = ({url}) => {
   const [loading, setLoading] = useState<boolean>(true);
-  const [Topair, setTopair] = useState<any[]>([]);
-  const [currentPage, setCurrentPage] = useState(1); // Current page state
-  const itemsPerPage = 10; // Number of items per page
-
-  const apiUrl = import.meta.env.VITE_API_CONSUMET_API;
-
-  if (!apiUrl) {
-    throw new Error("API URL is not defined in the environment variables.");
-  }
+  const [allAnime, setAllAnime] = useState<any[]>([]);
+  const [currentPage, setCurrentPage] = useState(1); 
+  const itemsPerPage = 10;
 
   // Calculate paginated data
   const startIndex = (currentPage - 1) * itemsPerPage;
   const endIndex = startIndex + itemsPerPage;
-  const paginatedData = Topair.slice(startIndex, endIndex);
+  const paginatedData = allAnime.slice(startIndex, endIndex);
 
   // Calculate the total number of pages
-  const totalPages = Math.ceil(Topair.length / itemsPerPage);
+  const totalPages = Math.ceil(allAnime.length / itemsPerPage);
 
   // Handle page change
   const handleNextPage = () => {
@@ -35,8 +31,8 @@ const AllAnimeList: React.FC = () => {
   return (
     <div className="overflow-auto">
       <AllApis
-        url="/anime-list"
-        setData={setTopair}
+        url={`${url}`}
+        setData={setAllAnime}
         setLoading={setLoading}
         limit={100000}
       />

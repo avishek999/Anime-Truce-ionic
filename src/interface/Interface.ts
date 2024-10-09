@@ -47,3 +47,8 @@ export interface AllApiComponentProps {
   setData: (data: any[]) => void;
   setLoading: (loading: boolean) => void;
 }
+
+
+export interface IAllAnimeList {
+  url:string;
+}
