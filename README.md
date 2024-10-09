@@ -9,7 +9,7 @@
 
 - **Anime Search**: Search for anime series and movies with details provided by the **Consumet API**.
 - **Trending Anime**: Stay updated with the most popular and trending anime.
-- **Watchlist**: Create and manage a personal watchlist.
+- **Watchlist**: Create and manage a personal watchlist. 
 - **Anime Details**: View detailed information like synopsis, episodes, genre, and ratings.
 - **User Profiles**: Create a personalized profile to track watch history.
 - **Community**: Interact with other anime fans, share reviews, and join discussions.
