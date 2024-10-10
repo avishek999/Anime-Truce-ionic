@@ -19,7 +19,7 @@ import {
 import { logInOutline, personCircleOutline } from "ionicons/icons";
 import React, { useEffect, useState } from "react";
 import Intro from "../components/Intro";
-import { Preferences } from '@capacitor/preferences';
+// import { Preferences } from '@capacitor/preferences';
 import { Router } from "react-router";
 import './LoginScreen.scss'
 
@@ -34,14 +34,14 @@ const LoginScreen: React.FC = () => {
   const [present,dismiss] = useIonLoading();
 
 
-  useEffect(() => {
-    const checkStorage = async () => {  
-      const seen = await Preferences.get({ key: INTRO_KEY });
-      console.log("Stored Value (should be 'true' or 'false'):", seen.value); // Log the value
-      setIntro(seen.value === 'true');
-    };
-    checkStorage();
-  }, []);
+  // useEffect(() => {
+  //   const checkStorage = async () => {  
+  //     // const seen = await Preferences.get({ key: INTRO_KEY });
+  //     console.log("Stored Value (should be 'true' or 'false'):", seen.value); // Log the value
+  //     setIntro(seen.value === 'true');
+  //   };
+  //   checkStorage();
+  // }, []);
   
   const router = useIonRouter();
  
@@ -57,15 +57,15 @@ const LoginScreen: React.FC = () => {
   };
 
 
-  const finishIntro = async () => {
-    setIntro(true);
-    await Preferences.set({ key: INTRO_KEY, value: 'true' }); // Save value
+  // const finishIntro = async () => {
+  //   setIntro(true);
+  //   await Preferences.set({ key: INTRO_KEY, value: 'true' }); // Save value
    
-  };
+  // };
 
   return (
     <>
-     {!intro ? ( <Intro onFinish={finishIntro} /> ) : (
+     {/* {!intro ? ( <Intro onFinish={} /> ) : ( */}
     <IonPage>
   
       <div className="ion-padding login_content" >
@@ -136,7 +136,7 @@ const LoginScreen: React.FC = () => {
         </IonGrid>
       </div>
     </IonPage>
-     )}
+     {/* )} */}
     </>
   );
 };
