@@ -1,6 +1,7 @@
 import { IonRouterLink } from "@ionic/react";
 import React from "react";
-import { Swiper, SwiperSlide } from "swiper/react";
+import { Swiper, SwiperSlide } from 'swiper/react'
+import { Autoplay, Navigation, Pagination } from "swiper/modules"
 import "./SwippereCard.scss";
 import { HomeBannerProps } from "@/interface/Interface";
 
@@ -10,7 +11,7 @@ import "swiper/css/pagination";
 import "swiper/css/navigation";
 
 // import required modules
-import { Pagination, Navigation } from "swiper/modules";
+
 
 const SwipperCard: React.FC<HomeBannerProps> = ({ slides }) => {
   return (

@@ -1,7 +1,6 @@
 
 import React from "react";
 // Import Swiper React components
-import { Swiper, SwiperSlide } from "swiper/react";
 import { HomeBannerProps } from "@/interface/Interface";
 // Import Swiper styles
 import "swiper/css";
@@ -11,7 +10,6 @@ import "swiper/css/navigation";
 import "./RecentEpisode.scss";
 
 // import required modules
-import { Pagination, Navigation } from "swiper/modules";
 import SwipperCard from "./swipperBannerCard/SwipperCard";
 
 

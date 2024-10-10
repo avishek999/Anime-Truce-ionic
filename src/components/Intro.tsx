@@ -1,7 +1,7 @@
 import React from "react";
 import { IonContent, IonButton, IonPage, IonText } from "@ionic/react";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Pagination, Navigation } from "swiper/modules";
+import { Swiper, SwiperSlide } from 'swiper/react'
+import { Autoplay, Navigation, Pagination } from "swiper/modules"
 import { IntroProps } from "@/interface/Interface";
 
 
