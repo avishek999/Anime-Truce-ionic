@@ -3,7 +3,7 @@ import React from "react";
 // Import Swiper React components
 import { HomeBannerProps } from "@/interface/Interface";
 // Import Swiper styles
-import "swiper/css";
+// import "swiper/css";
 // import "swiper/css/pagination";
 // import "swiper/css/navigation";
 
