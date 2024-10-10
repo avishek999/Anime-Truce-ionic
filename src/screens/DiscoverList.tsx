@@ -29,7 +29,7 @@ const DiscoverList: React.FC = () => {
   { selectedCategory === 'Popular' && <AllAnimeList  url="/top-airing"/>}
   { selectedCategory === 'Trending' && <AllAnimeList  url="/trending"/>}
   { selectedCategory === 'Movies' && <AllAnimeList  url="/movies"/>}
-  { selectedCategory === 'Upcoming' && <AllAnimeList  url="/upcoming"/>}
+  { selectedCategory === 'Upcoming' && <AllAnimeList  url="/tv"/>}
   { selectedCategory === 'Top Rated' && <AllAnimeList  url="/top"/>}
 
   
