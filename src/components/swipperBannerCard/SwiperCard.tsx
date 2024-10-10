@@ -1,6 +1,6 @@
 import { IonRouterLink } from "@ionic/react";
 import React from "react";
-import { Swiper, SwiperSlide } from 'swiper/react'; // Corrected import
+import { Swiper, SwiperSlide } from 'swiper/react'; 
 import { Autoplay, Navigation, Pagination } from "swiper/modules";
 import "./SwippereCard.scss"
 import { HomeBannerProps } from "@/interface/Interface";
