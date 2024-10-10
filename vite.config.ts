@@ -22,7 +22,7 @@ export default defineConfig({
   },
   build: {
     rollupOptions: {
-      external: ['@capacitor/preferences','swiper/react','swiper/modules','swiper/css'],
+      external: ['@capacitor/preferences','swiper/react','swiper/modules','swiper/css','swiper/css/pagination','swiper/css/Navigation'],
     },
   },
 })
