@@ -1,13 +1,13 @@
 import React from "react";
 import { IonContent, IonButton, IonPage, IonText } from "@ionic/react";
-import { Swiper, SwiperSlide } from 'swiper/react'
+// import { Swiper, SwiperSlide } from 'swiper/react'
 import { Autoplay, Navigation, Pagination } from "swiper/modules"
 import { IntroProps } from "@/interface/Interface";
 
 
 // Import Swiper styles
-import "swiper/css";
-import "swiper/css/pagination";
+// import "swiper/css";
+// import "swiper/css/pagination";
 import "./styles.css";
 
 
@@ -16,7 +16,7 @@ import "./styles.css";
 const Intro: React.FC<IntroProps> = ({ onFinish }) => {
   return (
     <>
-      <Swiper
+      {/* <Swiper
         pagination={{
           dynamicBullets: true,
         }}
@@ -39,7 +39,7 @@ const Intro: React.FC<IntroProps> = ({ onFinish }) => {
             Start
           </IonButton>
         </SwiperSlide>
-      </Swiper>
+      </Swiper> */}
     </>
   );
 };

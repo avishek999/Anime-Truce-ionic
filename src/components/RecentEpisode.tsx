@@ -4,10 +4,10 @@ import React from "react";
 import { HomeBannerProps } from "@/interface/Interface";
 // Import Swiper styles
 import "swiper/css";
-import "swiper/css/pagination";
-import "swiper/css/navigation";
+// import "swiper/css/pagination";
+// import "swiper/css/navigation";
 
-import "./RecentEpisode.scss";
+// import "./RecentEpisode.scss";
 
 // import required modules
 import SwipperCard from "./swipperBannerCard/SwiperCard";
