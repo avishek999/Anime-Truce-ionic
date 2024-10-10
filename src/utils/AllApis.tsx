@@ -1,33 +1,40 @@
-import { useIonViewWillEnter } from "@ionic/react";
-import React from "react";
+import React, { useEffect } from "react";
 import { AllApiComponentProps } from "../interface/Interface";
 
-
-const AllApis: React.FC<AllApiComponentProps> = ({ url,limit, setData, setLoading }) => {
+const AllApis: React.FC<AllApiComponentProps> = ({ url, limit, setData, setLoading }) => {
   const apiUrl = import.meta.env.VITE_API_CONSUMET_API;
 
   if (!apiUrl) {
     throw new Error("API URL is not defined in the environment variables.");
   }
 
-  useIonViewWillEnter(() => {
+  useEffect(() => {
     const fetchApiData = async () => {
       try {
         setLoading(true);
+
         const response = await fetch(`${apiUrl}${url}`);
         const result = await response.json();
-        setData(result.results.slice(0, `${limit}`)); 
-        setLoading(false);
+
+        if (result && result.results) {
+          // Ensure limit is a number and slice data accordingly
+          const limitedData = result.results.slice(0, limit);
+          console.log("Fetched Data: ", limitedData);
+          setData(limitedData);
+        } else {
+          console.error("Unexpected API response structure: ", result);
+        }
       } catch (error) {
         console.error("Error fetching API data:", error);
-        setLoading(false);
+      } finally {
+        setLoading(false); // Ensure loading is reset in both success and failure cases
       }
     };
 
     fetchApiData();
-  });
+  }, [apiUrl, url, limit, setData, setLoading]); // Include necessary dependencies
 
-  return null; 
+  return null;
 };
 
 export default AllApis;

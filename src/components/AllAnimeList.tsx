@@ -1,6 +1,6 @@
 import AllApis from "@/utils/AllApis";
 import { IonRouterLink } from "@ionic/react";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { IAllAnimeList } from "@/interface/Interface";
 
 
@@ -26,16 +26,21 @@ const AllAnimeList: React.FC<IAllAnimeList> = ({url}) => {
   const handlePreviousPage = () => {
     if (currentPage > 1) setCurrentPage(currentPage - 1);
   };
+  useEffect(() => {
+    console.log("All anime data:", allAnime);
+  }, [allAnime]);
 
-  // Render loading state or anime images
+
+
   return (
     <div className="overflow-auto">
       <AllApis
         url={`${url}`}
         setData={setAllAnime}
         setLoading={setLoading}
-        limit={100000}
+        limit={10}
       />
+    
       {loading ? (
         <p>Loading...</p> // Loading feedback
       ) : (
