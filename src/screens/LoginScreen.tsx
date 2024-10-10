@@ -19,7 +19,7 @@ import {
 import { logInOutline, personCircleOutline } from "ionicons/icons";
 import React, { useEffect, useState } from "react";
 import Intro from "../components/Intro";
-import {Preferences} from "@capacitor/preferences";
+import { Preferences } from '@capacitor/preferences';
 import { Router } from "react-router";
 import './LoginScreen.scss'
 
