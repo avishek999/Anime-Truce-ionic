@@ -10,7 +10,7 @@ import "swiper/css/navigation";
 import "./RecentEpisode.scss";
 
 // import required modules
-import SwipperCard from "./swipperBannerCard/SwipperCard";
+import SwipperCard from "./swipperBannerCard/SwiperCard";
 
 
 
