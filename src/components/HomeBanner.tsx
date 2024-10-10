@@ -1,6 +1,6 @@
 import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay, Navigation, Pagination } from "swiper/modules";
 import React, { useRef, useState } from "react";
-import { Autoplay, Pagination } from "swiper/modules";
 import { IonRouterLink, useIonRouter } from "@ionic/react";
 import { FaStar } from "react-icons/fa";
 import { FaSearch } from "react-icons/fa";
@@ -10,7 +10,13 @@ import { HomeBannerProps } from "@/interface/Interface";
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/effect-fade";
-import "swiper/css/pagination";
+
+import 'swiper/modules/navigation/navigation.scss'; // Navigation module
+import 'swiper/modules/pagination/pagination.scss';
+import 'swiper/modules/pagination/Autoplay.scss';
+
+
+
 import "./HomeBanner.scss";
 
 
