@@ -11,12 +11,6 @@ import { HomeBannerProps } from "@/interface/Interface";
 import "swiper/css";
 import "swiper/css/effect-fade";
 
-import 'swiper/modules/navigation/navigation.scss'; // Navigation module
-import 'swiper/modules/pagination/pagination.scss';
-import 'swiper/modules/pagination/Autoplay.scss';
-
-
-
 import "./HomeBanner.scss";
 
 
