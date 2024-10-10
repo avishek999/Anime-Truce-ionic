@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import HomeBanner from "../components/HomeBanner";
 import "./HomeScreen.scss";
 
+import SwiperCore, { Autoplay, Pagination } from 'swiper';
 import RecentEpisode from "../components/RecentEpisode";
 import DiscoverList from "./DiscoverList";
 import GenreList from "./GenreList";
