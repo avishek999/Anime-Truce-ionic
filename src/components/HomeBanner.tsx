@@ -1,5 +1,5 @@
-import { Swiper, SwiperSlide } from 'swiper/react'
-import { Autoplay, Navigation, Pagination } from "swiper/modules"
+import { Swiper, SwiperSlide } from 'swiper/react'; 
+import { Autoplay, Navigation, Pagination } from "swiper/modules";
 import React, { useRef, useState } from "react";
 import { IonRouterLink, useIonRouter } from "@ionic/react";
 import { FaStar } from "react-icons/fa";
