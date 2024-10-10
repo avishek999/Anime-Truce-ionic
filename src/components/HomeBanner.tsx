@@ -1,4 +1,5 @@
-import { Swiper, SwiperSlide } from 'swiper/react'; 
+import { Swiper, SwiperSlide } from 'swiper/react';
+
 import SwiperCore, { Autoplay, Pagination } from 'swiper';  // Correct modules import
 import React, { useRef } from "react";
 import { IonRouterLink } from "@ionic/react";
