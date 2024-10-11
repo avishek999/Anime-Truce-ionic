@@ -1,7 +1,6 @@
 declare module 'swiper/react' {
     export const Swiper: any;
     export const SwiperSlide: any;
-    // Add other exports you may need or any types as necessary
   }
 
   declare module 'swiper/modules' {
@@ -11,5 +10,5 @@ declare module 'swiper/react' {
   }
 
   declare module '@capacitor/preferences' {
-    export const Preferences: any; // Or define more specific types if known.
+    export const Preferences: any; 
   }

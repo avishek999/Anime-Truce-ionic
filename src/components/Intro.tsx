@@ -13,6 +13,7 @@ import "./styles.css";
 
 
 
+
 const Intro: React.FC<IntroProps> = ({ onFinish }) => {
   return (
     <>
