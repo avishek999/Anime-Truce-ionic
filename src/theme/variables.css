@@ -22,6 +22,17 @@ http://ionicframework.com/docs/theming/ */
   --banner-heading-color: #d7d5d5;
   --banner-gradient-start: rgba(43, 12, 35, 0);
   --banner-gradient-end: rgba(5, 1, 19, 1);
+  ::-webkit-scrollbar {
+    display: none !important;
+}
+
+ion-content::webkit-scrollbar {
+display:none !important;
+}
+
+*::-webkit-scrollbar {
+    display: none !important;
+}
   
 }
 

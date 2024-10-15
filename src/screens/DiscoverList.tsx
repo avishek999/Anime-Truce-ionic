@@ -15,7 +15,7 @@ const DiscoverList: React.FC = () => {
     {categories.map((category, index) => (
       <li 
         key={index}
-        onClick={() => setSelectedCategory(category)} // Set the selected category on click
+        onClick={() => setSelectedCategory(category)} 
         className={` px-4 py-1 rounded-full backdrop-blur-xl cursor-pointer transition-all duration-300 
        
           ${selectedCategory === category ? ' border-2 border-purple-500  text-black bg-white' : 'border bg-white/20 '}`} 

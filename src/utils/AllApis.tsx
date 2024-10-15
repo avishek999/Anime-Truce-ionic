@@ -37,4 +37,18 @@ const AllApis: React.FC<AllApiComponentProps> = ({ url, limit, setData, setLoadi
   return null;
 };
 
-export default AllApis;
+const fetchGenreList = async (apiurl:string) => {
+  try {
+    const response = await fetch(`${apiurl}/genre/list`);
+    if(!response.ok){
+      throw new Error("Failed to fetch genre list");
+    }
+
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    console.log(error)
+    throw error
+  }
+};
+export { AllApis,fetchGenreList};

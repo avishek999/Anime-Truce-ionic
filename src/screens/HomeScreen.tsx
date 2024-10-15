@@ -6,7 +6,7 @@ import "./HomeScreen.scss";
 import RecentEpisode from "../components/RecentEpisode";
 import DiscoverList from "./DiscoverList";
 import GenreList from "./GenreList";
-import AllApis from "@/utils/AllApis";
+import { AllApis } from "@/utils/AllApis";
 
 const HomeScreen: React.FC = () => {
   const animeHeadings = [

@@ -1,4 +1,4 @@
-import AllApis from "@/utils/AllApis";
+import {AllApis} from "@/utils/AllApis";
 import { IonRouterLink } from "@ionic/react";
 import React, { useEffect, useState } from "react";
 import { IAllAnimeList } from "@/interface/Interface";
@@ -38,7 +38,7 @@ const AllAnimeList: React.FC<IAllAnimeList> = ({url}) => {
         url={`${url}`}
         setData={setAllAnime}
         setLoading={setLoading}
-        limit={10}
+        limit={50}
       />
     
       {loading ? (
