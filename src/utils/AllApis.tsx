@@ -45,6 +45,7 @@ const fetchGenreList = async (apiurl:string) => {
     }
 
     const data = await response.json();
+    console.log("old data",data)
     return data;
   } catch (error) {
     console.log(error)

@@ -22,7 +22,7 @@ const RecentEpisode: React.FC<HomeBannerProps> = ({ slides }) => {
     <h1 className='mt-4 text-2xl font-bold ml-2 flex items-center gap-2'>
     Recent Episode
       <img width={40} src="https://cdn3d.iconscout.com/3d/premium/thumb/new-3d-icon-download-in-png-blend-fbx-gltf-file-formats--logo-sticker-discount-sale-sales-pack-icons-6240934.png?f=webp" alt="" />
-     
+       
       </h1>
 
     <SwipperCard
